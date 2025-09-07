@@ -23,6 +23,7 @@ export default function HomeScreen() {
 
     const todos = useQuery(api.todos.getTodos);
     const toggleTodo = useMutation(api.todos.toggleTodo);
+    const deleteTodo = useMutation(api.todos.deleteTodo);
  
     const isLoading = todos === undefined;
 
@@ -37,8 +38,14 @@ export default function HomeScreen() {
       }
     }
 
+    const handleDeleteTodo = async (id: Id<"todos">) => {
+      Alert.alert("Delete Todo", "Are you sure you want to delete this todo?", [
+        {text: "Cancel", style:"cancel"},
+        {text: "Delete", style:"destructive", onPress: () => deleteTodo({ id }) },
+      ]);
+    };
+
     const renderTodoItem = ({ item }: { item: Todo }) => {
-      
       return(
         <View style={homeStyles.todoItemWrapper}>
           <LinearGradient 
@@ -63,6 +70,33 @@ export default function HomeScreen() {
                 color="#fff" />}
               </LinearGradient>
             </TouchableOpacity>
+            <View style={homeStyles.todoTextContainer}>
+              <Text
+                style={[
+                  homeStyles.todoText,
+                  item.isCompleted && {
+                    textDecorationLine: "line-through",
+                    color: colors.textMuted,
+                    opacity: 0.6,
+                  }
+                ]}>
+                  {item.text}
+              </Text>
+
+
+              <View style={homeStyles.todoActions}>
+                <TouchableOpacity onPress={() => handleDeleteTodo(item._id)} activeOpacity={0.8}>
+                  <LinearGradient colors={colors.gradients.warning} style={homeStyles.actionButton}>
+                    <Ionicons name="pencil" size={14} color="#fff" />
+                  </LinearGradient>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => handleDeleteTodo(item._id)} activeOpacity={0.8}>
+                  <LinearGradient colors={colors.gradients.danger} style={homeStyles.actionButton}>
+                    <Ionicons name="trash" size={14} color="#fff" />
+                  </LinearGradient>
+                </TouchableOpacity>
+              </View>
+            </View>
           </LinearGradient>
         </View>
       )
