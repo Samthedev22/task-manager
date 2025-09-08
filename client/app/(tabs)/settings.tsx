@@ -5,8 +5,8 @@ import { createSettingsStyles } from '@/assets/styles/settings.styles';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import ProgressStats from '@/components/progressStats';
-import Preferences from '@/components/Preferences';
 import DangerZone from '@/components/dangerZone';
+import Preferences from '@/components/Preferences';
 
 
 export default function SettingsScreen() {
@@ -32,7 +32,6 @@ export default function SettingsScreen() {
       showsVerticalScrollIndicator={false}
       >
         <ProgressStats />
-
         <Preferences />
 
         <DangerZone />

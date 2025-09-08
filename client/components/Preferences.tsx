@@ -33,7 +33,6 @@ const Preferences = () => {
             ios_backgroundColor="#f03e3eff"
             trackColor={{false: "#cbcbcbff", true : "#c5c5c5ff"}}
             />
-            <hr />
         </View>
 
        <View style={preferenceStyle.settingItem}>
@@ -51,7 +50,6 @@ const Preferences = () => {
             ios_backgroundColor="#f03e3eff"
             trackColor={{false: "#cbcbcbff", true : "#c5c5c5ff"}}
             />
-            <hr />
         </View>
 
         <View style={preferenceStyle.settingItem}>
