@@ -16,7 +16,7 @@ const Header = () => {
 
     const homeStyles = createHomeStyles(colors);
 
-    const todos = useQuery(api.todos.getTodos);
+    const todos = useQuery(api.todos.getTodos) as Todo[] | undefined;
 
     const completedCount = todos ? todos.filter((todo) => todo.isCompleted).length : 0;
     const totalCount = todos ? todos.length : 0;

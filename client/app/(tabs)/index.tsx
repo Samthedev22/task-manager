@@ -74,7 +74,6 @@ export default function HomeScreen() {
       setEditText("");
     };
 
-
     const renderTodoItem = ({ item }: { item: Todo }) => {
       const isEditing = editTodoId === item._id;
       return(

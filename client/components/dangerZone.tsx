@@ -8,7 +8,6 @@ import { api } from '@/convex/_generated/api';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
-
 const DangerZone = () => {
   const {colors} = useTheme();
 
