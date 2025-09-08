@@ -4,7 +4,6 @@ import { createSettingsStyles } from '@/assets/styles/settings.styles';
 import useTheme from '@/app/hooks/useTheme';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
-import { isEnabled } from 'react-native/Libraries/Performance/Systrace';
 
 const Preferences = () => {
     const [isAutoSync, setIsAutoSync] = useState(true);
@@ -70,7 +69,6 @@ const Preferences = () => {
             ios_backgroundColor="#f03e3eff"
             trackColor={{false: "#cbcbcbff", true : "#c5c5c5ff"}}
             />
-            <hr />
         </View>
             
     </LinearGradient>

@@ -1,5 +1,5 @@
 import { Text, View, Alert, TouchableOpacity, StatusBar, TextInput } from "react-native";
-import useTheme, { ColorScheme } from "../hooks/useTheme";
+import useTheme from "../hooks/useTheme";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { createHomeStyles } from "@/assets/styles/home.styles";
@@ -12,7 +12,6 @@ import LoadingSpinner from "@/components/loadingSpinner";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import EmptyState from "@/components/emptyState";
 import { FlatList } from "react-native";
-import { getTodos, updateTodo } from "@/convex/todos";
 import { useState } from "react";
 
 
@@ -22,7 +21,7 @@ export default function HomeScreen() {
   const { colors } = useTheme();
 
   const [editTodoId, setEditTodoId] = useState<Id<"todos"> | null>(null);
-  const [editText, setEditText] = useState(false);
+  const [editText, setEditText] = useState("");
 
     const homeStyles = createHomeStyles(colors);
 
@@ -115,7 +114,7 @@ export default function HomeScreen() {
                     />
                     {/* Buttons */}
                     <View style={homeStyles.editButtons}>
-                      <TouchableOpacity onPress={handleEditSave} activeOpacity={0.8}>
+                      <TouchableOpacity onPress={() => handleEditSave(item)} activeOpacity={0.8}>
                         <LinearGradient colors={colors.gradients.success} style={homeStyles.editButton}>
                           <Ionicons name="checkmark" size={16} color="fff"/>
                           <Text style={homeStyles.editButtonText}>Save</Text>

@@ -1,6 +1,8 @@
 import { Stack } from "expo-router";
-import { ThemeProvider } from "./hooks/useTheme";
+// import { ThemeProvider } from "./hooks/useTheme";
+// import { ThemeProvider } from "@react-navigation/native";
 import { ConvexProvider, ConvexReactClient } from "convex/react";
+import { ThemeProvider } from "./hooks/useTheme";
 
 
 const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!, {
