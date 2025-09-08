@@ -106,8 +106,8 @@ export default function HomeScreen() {
                   <View style={homeStyles.editContainer}>
                     <TextInput
                       style={homeStyles.editInput}
-                      // value={editText}
-                      // onChangeText={setEditText}
+                      value={editText}
+                      onChangeText={setEditText}
                       autoFocus
                       multiline
                       placeholder="Edit your todo..."
@@ -159,9 +159,6 @@ export default function HomeScreen() {
               </View> 
                   </View>
                 )}
-
-
-             
           </LinearGradient>
         </View>
       )

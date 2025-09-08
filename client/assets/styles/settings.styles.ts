@@ -68,6 +68,7 @@ export const createSettingsStyles = (colors: ColorScheme) => {
     },
     statsContainer: {
       gap: 16,
+      marginBottom: 10
     },
     statCard: {
       flexDirection: "row",
